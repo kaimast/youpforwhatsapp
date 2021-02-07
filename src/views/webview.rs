@@ -41,7 +41,8 @@ pub fn create_webview(general_settings: &Settings, custom_settings: &GSettings) 
                     .clone()
                     .downcast::<NavigationPolicyDecision>()
                     .expect("Unable to cast policy");
-                let url = policy.get_request().unwrap().get_uri().unwrap();
+                let url = policy.get_navigation_action().unwrap().get_request().unwrap()
+                    .get_uri().expect("Failed to get url");
 
                 match show_uri(Screen::get_default().as_ref(), url.as_str(), 0) {
                     Ok(action) => action,

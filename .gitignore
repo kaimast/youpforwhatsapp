@@ -4,6 +4,12 @@
 /build-dir
 /.flatpak-builder
 /_buildir
+/build
 /build-aux/.*
 data/gschemas.compiled
 data/com.gigitux.youp.gresource
+
+#vim files
+*.swp
+*.swo
+*.swn
